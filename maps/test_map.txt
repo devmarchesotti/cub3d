@@ -1,0 +1,98 @@
+
+
+Knowned errors: 
+if empty line at the end of a file, a still reachable blocks leak
+
+
+
+
+
+
+COLORS to test: 
+	Couleur qui ne sont pas valide: 
+		- Nombre plus grand que 255
+		- plus petit que 0
+		- des lettres, symboles.
+		- plein de virgules : ,,,,,,,65,,,,,,34,,,,,,67
+
+
+
+
+
+MAP, a tester: 
+
+-la derniere ligne est la plus longue. 
+-une ligne random est la plus longue.
+-premiere ligne est la plus longue.
+
+-map avec a la fin des nouvelles lignes.
+-map sans nouvelle lignes a la fin. 
+
+
+-map sans pos joueur.
+-map avec plusieurs pos joueur.
+-map avec plusieurs pos joeur dans des directions differentes. 
+
+
+MAP TEST CASES:
+
+== GENERAL ERRORS ==
+- Empty map file.
+- Map with only spaces or newlines.
+- Map with invalid characters (e.g., symbols, letters not allowed).
+- Map with no player position.
+- Map with multiple player positions.
+- Map with no walls (completely open).
+- Map with walls but not closed (e.g., gaps in the walls).
+- Map with extra spaces at the beginning or end of lines.
+- Map with lines of inconsistent lengths.
+- Map with mixed tabs and spaces for indentation.
+
+== PLAYER POSITION ==
+- Player position at the edge of the map (invalid).
+- Player position surrounded by walls (valid).
+- Player position surrounded by open space (valid).
+- Player position on a wall (invalid).
+- Multiple player positions overlapping.
+
+== WALL CLOSURE ==
+- Map fully enclosed by walls (valid).
+- Map with a gap in the top wall.
+- Map with a gap in the bottom wall.
+- Map with a gap in the left wall.
+- Map with a gap in the right wall.
+- Map with diagonal gaps in the walls.
+- Map with walls that are not continuous (e.g., floating wall segments).
+
+== LINE LENGTHS ==
+- Map where the first line is the longest.
+- Map where the last line is the longest.
+- Map where a random middle line is the longest.
+- Map with lines of varying lengths but still valid.
+- Map with lines of varying lengths and invalid (e.g., gaps).
+- Map with lines that are too short to form a valid structure.
+
+== NEWLINES ==
+- Map with extra newlines at the end of the file.
+- Map with no newline at the end of the file.
+- Map with multiple consecutive newlines in the middle.
+- Map with newlines between every character (extreme case).
+
+== COLORS (IF APPLICABLE) ==
+- Colors with values greater than 255.
+- Colors with values less than 0.
+- Colors with invalid characters (e.g., letters, symbols).
+- Colors with too many commas (e.g., `,,,,,65,,,,34,,,,67`).
+- Colors with missing values (e.g., `255,,34`).
+- Colors with negative values (e.g., `-10,255,255`).
+- Colors with floating-point values (e.g., `255.5,100,50`).
+
+== EDGE CASES ==
+- Map with only one row of walls.
+- Map with only one column of walls.
+- Map with a single valid player position and no other elements.
+- Map with the maximum allowed size (test performance).
+- Map with the minimum allowed size (e.g., 3x3 with walls and a player).
+- Map with overlapping elements (e.g., player and wall on the same tile).
+- Map with excessive whitespace between elements.
+- Map with non-rectangular shapes (e.g., jagged edges).
